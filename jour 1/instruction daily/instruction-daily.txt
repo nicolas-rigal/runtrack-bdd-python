@@ -1,0 +1,453 @@
+Enter password: *******
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 17
+Server version: 8.0.32 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> USE laPlateforme
+Database changed
+mysql> CREATE TABLE etudiants (
+    ->   id INT NOT NULL AUTO_INCREMENT,
+    ->   nom VARCHAR(255) NOT NULL,
+    ->   prenom VARCHAR(25) NOT NULL,
+    ->   age INT NOT NULL,
+    ->   email VARCHAR(255) NOT NULL,
+    ->   PRIMARY KEY (id)
+    -> );
+Query OK, 0 rows affected (0.16 sec)
+
+mysql> show etudiants
+    ->
+    ->
+    ->
+    ->
+    ->
+    -> SELECT * FROME etudiant
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'etudiants
+
+
+
+
+
+SELECT * FROME etudiant' at line 1
+mysql> SELECT * FROME etudiant
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROME etudiant' at line 1
+mysql> SELECT * FROME etudiant ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROME etudiant' at line 1
+mysql> SELECT * FROM etudiant;
+ERROR 1146 (42S02): Table 'laplateforme.etudiant' doesn't exist
+mysql> create table etudiants(
+    -> id
+    -> ^C
+mysql> CREATE TABLE etudiants (id INT NOT NULL AUTO_INCREMENT,nom VARCHAR(255) NOT NULL, prenom VARCHAR(25) NOT NULL,age INT NOT NULL, email VARCHAR(255) NOT NULL,PRIMARY KEY (id));
+ERROR 1050 (42S01): Table 'etudiants' already exists
+mysql> DROP DATABASE
+    -> ^C
+mysql> DROP DATABASE;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> DROP DATABASE etudiants ;
+ERROR 1008 (HY000): Can't drop database 'etudiants'; database doesn't exist
+mysql> USE laPlateforme
+Database changed
+mysql> CREATE TABLE etudiants (id INT NOT NULL AUTO_INCREMENT,nom VARCHAR(255) NOT NULL, prenom VARCHAR(25) NOT NULL,age INT NOT NULL, email VARCHAR(255) NOT NULL,PRIMARY KEY (id));
+ERROR 1050 (42S01): Table 'etudiants' already exists
+mysql> DROP DATABASE laPlateforme
+    -> ^C
+mysql> DROP DATABASE laPlateforme;
+Query OK, 1 row affected (0.09 sec)
+
+mysql> CREATE DATABASE laPlateforme;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> CREATE TABLE etudiants (id INT NOT NULL AUTO_INCREMENT,nom VARCHAR(255) NOT NULL, prenom VARCHAR(25) NOT NULL,age INT NOT NULL, email VARCHAR(255) NOT NULL,PRIMARY KEY (id));
+ERROR 1046 (3D000): No database selected
+mysql> USE laPlateforme
+Database changed
+mysql> CREATE TABLE etudiants (id INT NOT NULL AUTO_INCREMENT,nom VARCHAR(255) NOT NULL, prenom VARCHAR(25) NOT NULL,age INT NOT NULL, email VARCHAR(255) NOT NULL,PRIMARY KEY (id));
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> SHOW *
+    -> ^C
+mysql> SHOW *;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*' at line 1
+mysql> SHOW DATABASE laPlateforme
+    -> ^C
+mysql> SHOW DATABASE laPlateforme.
+    -> ^C
+mysql> SHOW DATABASE laPlateforme;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DATABASE laPlateforme' at line 1
+mysql> SELECT * FROM etudiants;
+Empty set (0.02 sec)
+
+mysql> describe etudiants;
++--------+--------------+------+-----+---------+----------------+
+| Field  | Type         | Null | Key | Default | Extra          |
++--------+--------------+------+-----+---------+----------------+
+| id     | int          | NO   | PRI | NULL    | auto_increment |
+| nom    | varchar(255) | NO   |     | NULL    |                |
+| prenom | varchar(25)  | NO   |     | NULL    |                |
+| age    | int          | NO   |     | NULL    |                |
+| email  | varchar(255) | NO   |     | NULL    |                |
++--------+--------------+------+-----+---------+----------------+
+5 rows in set (0.09 sec)
+
+mysql> INSERT INTO etudiants (nom, prenom, age, email)
+    -> VALUES ('Doe', 'John', 20, 'johndoe@example.com');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> INSERT INTO etudiants (nom, prenom, age, email)
+    -> ^C
+mysql> INSERT INTO etudiants (nom, prenom, age, email)
+    -> VALUES ('Spaghetti', 'Betty', 23, 'betty.Spaghetti@laplateforme.io');
+Query OK, 1 row affected (0.01 sec)
+
+mysql>
+mysql> INSERT INTO etudiants (nom, prenom, age, email)
+    -> VALUES ('Steak', 'Chuck', 45, 'chuck.steak@laplateforme.io');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>
+mysql> INSERT INTO etudiants (nom, prenom, age, email)
+    -> VALUES ('Doe', 'John', 18, 'john.doe@laplateforme.io');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>
+mysql> INSERT INTO etudiants (nom, prenom, age, email)
+    -> VALUES ('Barnes', 'Binkie', 16, 'binkie.barnes@laplateforme.io');
+Query OK, 1 row affected (0.00 sec)
+
+mysql>
+mysql> INSERT INTO etudiants (nom, prenom, age, email)
+    -> VALUES ('Dupuis', 'Gertrude', 20, 'gertrude.dupuis@laplateforme.io');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show etudiants;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'etudiants' at line 1
+mysql> select * from etudiants
+    -> ^C
+mysql> select * from etudiants;
++----+-----------+----------+-----+---------------------------------+
+| id | nom       | prenom   | age | email                           |
++----+-----------+----------+-----+---------------------------------+
+|  1 | Doe       | John     |  20 | johndoe@example.com             |
+|  2 | Spaghetti | Betty    |  23 | betty.Spaghetti@laplateforme.io |
+|  3 | Steak     | Chuck    |  45 | chuck.steak@laplateforme.io     |
+|  4 | Doe       | John     |  18 | john.doe@laplateforme.io        |
+|  5 | Barnes    | Binkie   |  16 | binkie.barnes@laplateforme.io   |
+|  6 | Dupuis    | Gertrude |  20 | gertrude.dupuis@laplateforme.io |
++----+-----------+----------+-----+---------------------------------+
+6 rows in set (0.05 sec)
+
+mysql> mysqldump -u nicolas -p laPlateforme > laplateforme.sql
+    -> ^C
+mysql> mysqldump -u nicolas -p laPlateforme > laplateforme.sql;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysqldump -u nicolas -p laPlateforme > laplateforme.sql' at line 1
+mysql> mysqldump -u utilisateur -p laPlateforme > laplateforme.sql;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysqldump -u utilisateur -p laPlateforme > laplateforme.sql' at line 1
+mysql> mysqldump -u utilisateur -p laPlateforme > laplateforme.sql;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysqldump -u utilisateur -p laPlateforme > laplateforme.sql' at line 1
+mysql>
+mysql>
+mysql> dump -u utilisateur -p laPlateforme > laplateforme.sql;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dump -u utilisateur -p laPlateforme > laplateforme.sql' at line 1
+mysql> dump -u Utilisateur -p laPlateforme > laplateforme.sql;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dump -u Utilisateur -p laPlateforme > laplateforme.sql' at line 1
+mysql> select * from etudiants where age < 18;
++----+--------+--------+-----+-------------------------------+
+| id | nom    | prenom | age | email                         |
++----+--------+--------+-----+-------------------------------+
+|  5 | Barnes | Binkie |  16 | binkie.barnes@laplateforme.io |
++----+--------+--------+-----+-------------------------------+
+1 row in set (0.02 sec)
+
+mysql> select * from etudiants order by age
+    -> ^C
+mysql> select * from etudiants order by age;
++----+-----------+----------+-----+---------------------------------+
+| id | nom       | prenom   | age | email                           |
++----+-----------+----------+-----+---------------------------------+
+|  5 | Barnes    | Binkie   |  16 | binkie.barnes@laplateforme.io   |
+|  4 | Doe       | John     |  18 | john.doe@laplateforme.io        |
+|  1 | Doe       | John     |  20 | johndoe@example.com             |
+|  6 | Dupuis    | Gertrude |  20 | gertrude.dupuis@laplateforme.io |
+|  2 | Spaghetti | Betty    |  23 | betty.Spaghetti@laplateforme.io |
+|  3 | Steak     | Chuck    |  45 | chuck.steak@laplateforme.io     |
++----+-----------+----------+-----+---------------------------------+
+6 rows in set (0.01 sec)
+
+mysql>  select * from etudiants order by asc  age;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc  age' at line 1
+mysql>  select * from etudiants order by age asc;
++----+-----------+----------+-----+---------------------------------+
+| id | nom       | prenom   | age | email                           |
++----+-----------+----------+-----+---------------------------------+
+|  5 | Barnes    | Binkie   |  16 | binkie.barnes@laplateforme.io   |
+|  4 | Doe       | John     |  18 | john.doe@laplateforme.io        |
+|  1 | Doe       | John     |  20 | johndoe@example.com             |
+|  6 | Dupuis    | Gertrude |  20 | gertrude.dupuis@laplateforme.io |
+|  2 | Spaghetti | Betty    |  23 | betty.Spaghetti@laplateforme.io |
+|  3 | Steak     | Chuck    |  45 | chuck.steak@laplateforme.io     |
++----+-----------+----------+-----+---------------------------------+
+6 rows in set (0.00 sec)
+
+mysql>  select * from etudiants order by age desc;
++----+-----------+----------+-----+---------------------------------+
+| id | nom       | prenom   | age | email                           |
++----+-----------+----------+-----+---------------------------------+
+|  3 | Steak     | Chuck    |  45 | chuck.steak@laplateforme.io     |
+|  2 | Spaghetti | Betty    |  23 | betty.Spaghetti@laplateforme.io |
+|  1 | Doe       | John     |  20 | johndoe@example.com             |
+|  6 | Dupuis    | Gertrude |  20 | gertrude.dupuis@laplateforme.io |
+|  4 | Doe       | John     |  18 | john.doe@laplateforme.io        |
+|  5 | Barnes    | Binkie   |  16 | binkie.barnes@laplateforme.io   |
++----+-----------+----------+-----+---------------------------------+
+6 rows in set (0.00 sec)
+
+mysql>  select * from etudiants where nom = 'Dupuis' and premon = 'Gertrude'
+    -> ^C
+mysql>  select * from etudiants where nom = 'Dupuis' and premon = 'Gertrude';
+ERROR 1054 (42S22): Unknown column 'premon' in 'where clause'
+mysql>  select * from etudiants where nom = 'Dupuis';
++----+--------+----------+-----+---------------------------------+
+| id | nom    | prenom   | age | email                           |
++----+--------+----------+-----+---------------------------------+
+|  6 | Dupuis | Gertrude |  20 | gertrude.dupuis@laplateforme.io |
++----+--------+----------+-----+---------------------------------+
+1 row in set (0.00 sec)
+
+mysql>  select * from etudiants where nom = 'Dupuis' and prenom = 'Gertrude';
++----+--------+----------+-----+---------------------------------+
+| id | nom    | prenom   | age | email                           |
++----+--------+----------+-----+---------------------------------+
+|  6 | Dupuis | Gertrude |  20 | gertrude.dupuis@laplateforme.io |
++----+--------+----------+-----+---------------------------------+
+1 row in set (0.01 sec)
+
+mysql> INSERT INTO etudiants (nom, prenom, age, email)
+    -> VALUES ('Dupuis', 'Martin ', 18, 'martin.dupuis@laplateforme.io');
+Query OK, 1 row affected (0.06 sec)
+
+mysql>  select * from etudiants where nom = 'Dupuis';
++----+--------+----------+-----+---------------------------------+
+| id | nom    | prenom   | age | email                           |
++----+--------+----------+-----+---------------------------------+
+|  6 | Dupuis | Gertrude |  20 | gertrude.dupuis@laplateforme.io |
+|  7 | Dupuis | Martin   |  18 | martin.dupuis@laplateforme.io   |
++----+--------+----------+-----+---------------------------------+
+2 rows in set (0.00 sec)
+
+mysql>  select * from etudiants where age <25 and >18;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '>18' at line 1
+mysql>  select * from etudiants where age between 18 and 25;
++----+-----------+----------+-----+---------------------------------+
+| id | nom       | prenom   | age | email                           |
++----+-----------+----------+-----+---------------------------------+
+|  1 | Doe       | John     |  20 | johndoe@example.com             |
+|  2 | Spaghetti | Betty    |  23 | betty.Spaghetti@laplateforme.io |
+|  4 | Doe       | John     |  18 | john.doe@laplateforme.io        |
+|  6 | Dupuis    | Gertrude |  20 | gertrude.dupuis@laplateforme.io |
+|  7 | Dupuis    | Martin   |  18 | martin.dupuis@laplateforme.io   |
++----+-----------+----------+-----+---------------------------------+
+5 rows in set (0.01 sec)
+
+mysql>  select * from etudiants where age between 18 and 25  asc;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc' at line 1
+mysql>  select * from etudiants where age asc between 18 and 25  asc;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc between 18 and 25  asc' at line 1
+mysql>  select * from etudiants where age asc between 18 and 25 order by asc;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc between 18 and 25 order by asc' at line 1
+mysql>  select * from etudiants where age asc between 18 and 25 order by age asc;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'asc between 18 and 25 order by age asc' at line 1
+mysql> SELECT * FROM etudiants
+    -> WHERE age BETWEEN 18 AND 25
+    -> ORDER BY age ASC;
++----+-----------+----------+-----+---------------------------------+
+| id | nom       | prenom   | age | email                           |
++----+-----------+----------+-----+---------------------------------+
+|  4 | Doe       | John     |  18 | john.doe@laplateforme.io        |
+|  7 | Dupuis    | Martin   |  18 | martin.dupuis@laplateforme.io   |
+|  1 | Doe       | John     |  20 | johndoe@example.com             |
+|  6 | Dupuis    | Gertrude |  20 | gertrude.dupuis@laplateforme.io |
+|  2 | Spaghetti | Betty    |  23 | betty.Spaghetti@laplateforme.io |
++----+-----------+----------+-----+---------------------------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT * FROM etudiants WHERE age BETWEEN 18 AND 25 ORDER BY age ASC;
++----+-----------+----------+-----+---------------------------------+
+| id | nom       | prenom   | age | email                           |
++----+-----------+----------+-----+---------------------------------+
+|  4 | Doe       | John     |  18 | john.doe@laplateforme.io        |
+|  7 | Dupuis    | Martin   |  18 | martin.dupuis@laplateforme.io   |
+|  1 | Doe       | John     |  20 | johndoe@example.com             |
+|  6 | Dupuis    | Gertrude |  20 | gertrude.dupuis@laplateforme.io |
+|  2 | Spaghetti | Betty    |  23 | betty.Spaghetti@laplateforme.io |
++----+-----------+----------+-----+---------------------------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT * FROM etudiants  order by name;
+ERROR 1054 (42S22): Unknown column 'name' in 'order clause'
+mysql> SELECT * FROM etudiants  order by nom;
++----+-----------+----------+-----+---------------------------------+
+| id | nom       | prenom   | age | email                           |
++----+-----------+----------+-----+---------------------------------+
+|  5 | Barnes    | Binkie   |  16 | binkie.barnes@laplateforme.io   |
+|  1 | Doe       | John     |  20 | johndoe@example.com             |
+|  4 | Doe       | John     |  18 | john.doe@laplateforme.io        |
+|  6 | Dupuis    | Gertrude |  20 | gertrude.dupuis@laplateforme.io |
+|  7 | Dupuis    | Martin   |  18 | martin.dupuis@laplateforme.io   |
+|  2 | Spaghetti | Betty    |  23 | betty.Spaghetti@laplateforme.io |
+|  3 | Steak     | Chuck    |  45 | chuck.steak@laplateforme.io     |
++----+-----------+----------+-----+---------------------------------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT * FROM etudiants like 'b%';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'like 'b%'' at line 1
+mysql> SELECT * FROM etudiants where prenom like 'b%';
++----+-----------+--------+-----+---------------------------------+
+| id | nom       | prenom | age | email                           |
++----+-----------+--------+-----+---------------------------------+
+|  2 | Spaghetti | Betty  |  23 | betty.Spaghetti@laplateforme.io |
+|  5 | Barnes    | Binkie |  16 | binkie.barnes@laplateforme.io   |
++----+-----------+--------+-----+---------------------------------+
+2 rows in set (0.01 sec)
+
+mysql> update etudiants set age ='20' where id = 2b;
+ERROR 1054 (42S22): Unknown column '2b' in 'where clause'
+mysql> update etudiants set age ='20' where id = 2;
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM etudiants ;
++----+-----------+----------+-----+---------------------------------+
+| id | nom       | prenom   | age | email                           |
++----+-----------+----------+-----+---------------------------------+
+|  1 | Doe       | John     |  20 | johndoe@example.com             |
+|  2 | Spaghetti | Betty    |  20 | betty.Spaghetti@laplateforme.io |
+|  3 | Steak     | Chuck    |  45 | chuck.steak@laplateforme.io     |
+|  4 | Doe       | John     |  18 | john.doe@laplateforme.io        |
+|  5 | Barnes    | Binkie   |  16 | binkie.barnes@laplateforme.io   |
+|  6 | Dupuis    | Gertrude |  20 | gertrude.dupuis@laplateforme.io |
+|  7 | Dupuis    | Martin   |  18 | martin.dupuis@laplateforme.io   |
++----+-----------+----------+-----+---------------------------------+
+7 rows in set (0.00 sec)
+
+mysql> delete FROM etudiants where 'nom' = Doe and 'John' ;
+ERROR 1054 (42S22): Unknown column 'Doe' in 'where clause'
+mysql> DELETE FROM etudiants
+    -> WHERE nom = 'Doe' AND prenom = 'John';
+Query OK, 2 rows affected (0.01 sec)
+
+mysql> SELECT * FROM etudiants ;
++----+-----------+----------+-----+---------------------------------+
+| id | nom       | prenom   | age | email                           |
++----+-----------+----------+-----+---------------------------------+
+|  2 | Spaghetti | Betty    |  20 | betty.Spaghetti@laplateforme.io |
+|  3 | Steak     | Chuck    |  45 | chuck.steak@laplateforme.io     |
+|  5 | Barnes    | Binkie   |  16 | binkie.barnes@laplateforme.io   |
+|  6 | Dupuis    | Gertrude |  20 | gertrude.dupuis@laplateforme.io |
+|  7 | Dupuis    | Martin   |  18 | martin.dupuis@laplateforme.io   |
++----+-----------+----------+-----+---------------------------------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT count id from etudiants ;
+ERROR 1054 (42S22): Unknown column 'count' in 'field list'
+mysql> SELECT count (*) from etudiants ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) from etudiants' at line 1
+mysql> SELECT COUNT(*) FROM  etudiants ;
++----------+
+| COUNT(*) |
++----------+
+|        5 |
++----------+
+1 row in set (0.05 sec)
+
+mysql> SELECT COUNT(*) FROM  etudiants where age >18 ;
++----------+
+| COUNT(*) |
++----------+
+|        3 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COUNT(*) FROM  etudiants where age between 18 and 25;
++----------+
+| COUNT(*) |
++----------+
+|        3 |
++----------+
+1 row in set (0.01 sec)
+
+mysql> SELECT * FROM etudiants ORDER BY age ASC LIMIT 1;
++----+--------+--------+-----+-------------------------------+
+| id | nom    | prenom | age | email                         |
++----+--------+--------+-----+-------------------------------+
+|  5 | Barnes | Binkie |  16 | binkie.barnes@laplateforme.io |
++----+--------+--------+-----+-------------------------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT * FROM etudiants ORDER BY age desc LIMIT 1;
++----+-------+--------+-----+-----------------------------+
+| id | nom   | prenom | age | email                       |
++----+-------+--------+-----+-----------------------------+
+|  3 | Steak | Chuck  |  45 | chuck.steak@laplateforme.io |
++----+-------+--------+-----+-----------------------------+
+1 row in set (0.00 sec)
+
+mysql> select * avg(age) from etudiants
+    -> ^C
+mysql> select * avg(age) from etudiants;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'avg(age) from etudiants' at line 1
+mysql> select * avg(age) as moyenne_age from etudiants;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'avg(age) as moyenne_age from etudiants' at line 1
+mysql> SELECT AVG(age) as moyenne_age
+    -> FROM etudiants;
++-------------+
+| moyenne_age |
++-------------+
+|     23.8000 |
++-------------+
+1 row in set (0.01 sec)
+
+mysql> SELECT AVG(age) as moyenne_age from etudians;
+ERROR 1146 (42S02): Table 'laplateforme.etudians' doesn't exist
+mysql> SELECT AVG(age) as moyenne_age
+    -> FROM etudiants;
++-------------+
+| moyenne_age |
++-------------+
+|     23.8000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT AVG(age) as moyenne_age FROM etudiants;
++-------------+
+| moyenne_age |
++-------------+
+|     23.8000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM etudiants ;
++----+-----------+----------+-----+---------------------------------+
+| id | nom       | prenom   | age | email                           |
++----+-----------+----------+-----+---------------------------------+
+|  2 | Spaghetti | Betty    |  20 | betty.Spaghetti@laplateforme.io |
+|  3 | Steak     | Chuck    |  45 | chuck.steak@laplateforme.io     |
+|  5 | Barnes    | Binkie   |  16 | binkie.barnes@laplateforme.io   |
+|  6 | Dupuis    | Gertrude |  20 | gertrude.dupuis@laplateforme.io |
+|  7 | Dupuis    | Martin   |  18 | martin.dupuis@laplateforme.io   |
++----+-----------+----------+-----+---------------------------------+
+5 rows in set (0.01 sec)
+
+mysql>
+
+
